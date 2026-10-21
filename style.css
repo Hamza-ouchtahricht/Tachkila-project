@@ -1,1 +1,111 @@
 @import "tailwindcss";
+
+.les_elemen{
+    background-color: rgb(79, 76, 70);
+    display: grid;
+    height: 600px;
+    gap:8px;
+    
+    
+    padding: 15px;
+   grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+
+}
+.les_elemen div{
+    
+    background-color: rgb(110, 119, 118);
+    border: solid 1px rgb(161, 158, 158);
+    border-radius: 8px;
+}
+.elem37{
+    
+    grid-column: 1/2;
+    grid-row: 4/7;
+  
+}
+
+#gk{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+      background-color: rgb(218, 255, 53);
+    border: 1px solid;
+    padding: 3%;
+    height: 100%;
+    width:100%;
+}
+.elem38{
+    grid-column: 2/4;
+    grid-row: 4/5;
+}
+.elem62{
+    grid-column: 2/4;
+    grid-row: 6/7;
+
+}
+.elem88{
+    grid-column: 3/5;
+}
+.elem3{
+    grid-column: 3/5;
+}
+.elem6{
+    grid-column: 7/9;
+
+}
+.elem39{
+    grid-column:6/8;
+
+}
+.elem58{
+    grid-column:6/8;
+
+}
+.elem90{
+    grid-column:7/9;
+}
+#def{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+      background-color: rgb(46, 11, 219);
+    border: 1px solid;
+    padding: 3%;
+    height: 100%;
+    width:100%;
+}
+
+#mid{
+     display: flex;
+    align-items:center;
+    justify-content: center;
+
+      background-color: rgb(23, 207, 23);
+    border: 1px solid;
+    padding: 3%;
+    height: 100%;
+    width:100%;
+}
+
+#cf {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+      background-color: rgb(255, 30, 0);
+    border: 1px solid;
+    padding: 3%;
+    height: 100%;
+    width:100%;
+
+}
+.elem32{
+    grid-column: 10/12 ;
+}
+.elem61{
+    grid-column: 10/12 ;
+}
