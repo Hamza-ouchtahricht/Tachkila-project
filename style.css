@@ -1,4 +1,3 @@
-@import "tailwindcss";
 
 .les_elemen{
     background-color: rgb(79, 76, 70);
@@ -109,3 +108,27 @@
 .elem61{
     grid-column: 10/12 ;
 }
+
+.modal{
+    
+    position: absolute;
+    background-color: rgb(18, 103, 173);
+    top: 30%;
+    left: 30%;
+    width: 50%;
+    height: 50%;
+}
+
+#player_fullname{
+    color: beige;
+    background-color: chocolate;
+
+}
+
+#select_position{
+
+}
+#close-btn{
+
+}
+

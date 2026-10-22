@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script></script>
     <link rel="stylesheet" href="style.css">
+      <script src="script.js"  defer></script>
     <title>Tachkila</title>
 </head>
 <body>
@@ -27,11 +29,30 @@
     </div>
     </header>
 <main >
-    <section  class="flex">
+    <section  class="flex  ">
  
         <div class="bg-amber-100 w-100 h-200flex flex-col ...  align-center ">
-             <h2>Effectif</h2>
-             <button>Ajouter un joueur</button>
+             <button class="bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-semibold px-4 py-2 rounded-lg shadow-sm transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+  +ajoute un joueur
+</button>
+            
+            <h2 class="font-bold ... bg-amber-400">Effectif</h2>
+            <p class="font-bold ... bg-emerald-400">Cliquez sur un joueur place pour voir sa case sur le terrain. pour modifier, pour supprime.</p>
+        <button type="button" class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none bg-red-600">Supprime</button>
+        <button type="button" class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none bg-amber-300">modifier</button>
+
+            <form class="max-w-sm mx-auto">
+
+                <label for="select_players" class="block mb-2.5 text-sm font-medium text-heading font-bold ... bg-emerald-200">Choose an player</label>
+                 <select id="select_players" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
+                    <option selected>Choose a player</option>
+                    <option value="GK">bono</option>
+                        <option value="RB">Hakimi</option>
+                          <option value="LB">Mezraoui</option>
+                           <option value="CB">Ramos</option>
+                               </select>
+                 </select>
+             </form>      
   
         </div>
         <!-- Hadi div li jam3a terain m3a dakchi lakher  -->
@@ -188,8 +209,7 @@
                             
                          </div>
                          <div class="elem90">
-                            <p id="mid" class="font-bold ...">RMF</p>
-                         </div>
+                            <p id="mid" class="font-bold ...">RMF</p></div>
                          <div class="elem91"></div>
                          <div class="elem92"></div>
                          <div class="elem93"></div>
@@ -229,6 +249,32 @@
     </div>
 </main>
 
+<form class="modal">
+
+    <label for="player_fullname"  >Write a full name of your player </label>
+    <input type="text" id="player_fullname" placeholder="EX:Cristiano Ronaldo " > 
+    <label for="select_position" class="block mb-2.5 text-sm font-medium text-heading font-bold ... bg-emerald-200">select player postion</label>
+                 <select id="select_position" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
+                    <option selected>Choose the position</option>
+                    <option value="GK">GK</option>
+                         <option value="CB">CB</option>
+                          <option value="LB">LB</option>
+                           <option value="RB">RB</option>
+                           <option value="RB">LMF</option>
+                           <option value="RB">CMF</option>
+                           <option value="RB">CMF</option>
+                           <option value="RB">RMF</option>
+                           <option value="RB">CF</option>
+                         </select>
+                         <label for="player_number">Choose a number </label>
+                        <input type="text" id="player_number" placeholder="Entre 1 to 99">
+                        <div id="close_box" class="close_box">
+                                
+  
+                                  <!-- The X Close Button -->
+                                  <button class="close-btn" aria-label="Close" onclick="closeBox()">&times;</button>
+                                 </div>
+                                </form>
     
     
     
