@@ -10,224 +10,233 @@
     <title>Tachkila</title>
 </head>
 <body>
-    <header class= "flex justify-between  items-center bg-cyan-500 ... px-3">
+    <header class= "flex justify-between items-center bg-cyan-500 px-4 h-18">
       <div class="flex  items-center">
         <img  src="/files/atlaslogo.png" alt="atlaslogo" class="relative  h-20 w-20 px-2 py-1 object-contain">
       
-        <h1 class="font-bold ...">Atlas Fc</h1> </div>
-        <ul class="flex gap-7 list-disc list-inside">
-            <li class="bg-amber-300 list-inside px-3 py-1 text-center rounded-full ... text-amber-50">GB</li>
-            <li class="bg-indigo-800 list-inside px-3 py-1 text-center rounded-full ... text-amber-50">DEF</li>
-            <li class="bg-emerald-600 list-inside px-3 py-1 text-center rounded-full ... text-amber-50">MIL</li>
-            <li class="bg-red-600 list-inside px-3 py-1 text-center rounded-full ... text-amber-50 ">ATT</li>
-            
-        </ul>
-        <div class="flex justify-around gap-3  text-center px-3 py-1 ">
+        <h1 class="font-bold">Atlas Fc</h1> </div>
+        <ul class="flex gap-4 text-white  ">
+          <li class="bg-amber-400 px-6 py-2.5 rounded-full">• GB</li>
+          <li class="bg-indigo-800 px-6 py-2.5 rounded-full">• DEF</li>
+          <li class="bg-emerald-600 px-6 py-2.5 rounded-full">• MIL</li>
+         <li class="bg-red-600 px-6 py-2.5 rounded-full">• ATT</li>
+         </ul>
+        <div class="flex items-center gap-8  ">
 
-        <h2 id="Schema" class="px-3 py-1 font-bold ...">Schéma</h2>
-        <h2 id="formation_442" class=" bg-black text-amber-300 rounded-full ... px-3 py-1 font-bold ...">4-4-2</h2>
+        <h2 id="Schema" class="px-3 py-1 font-bold ">Schéma</h2>
+        <h2 id="formation_442" class=" bg-black text-amber-300 rounded-full  px-3 py-1 font-bold ">4-4-2</h2>
     </div>
     </header>
-<main >
-    <section  class="flex  ">
+<main  class="flex justify-between">
+    <aside class="w-52 m in-h-screen bg-slate-800 flex flex-col gap-3 p-4" >
  
-        <div class="bg-amber-100 w-100 h-200flex flex-col ...  align-center ">
-             <button class="bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-semibold px-4 py-2 rounded-lg shadow-sm transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-  +ajoute un joueur
-</button>
+        
+             <button id="button_ajout" class="bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-semibold px-4 py-2 rounded-lg shadow-sm transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                  +ajoute un joueur 
+                </button>
             
-            <h2 class="font-bold ... bg-amber-400">Effectif</h2>
-            <p class="font-bold ... bg-emerald-400">Cliquez sur un joueur place pour voir sa case sur le terrain. pour modifier, pour supprime.</p>
+            <h2 class="font-bold text-base bg-amber-500 text-white py-1 px-2 rounded-md">Effectif</h2>
+            <p class="font-bold  text-gray-300 bg-gray-700 p-2 rounded">Cliquez sur un joueur place pour voir sa case sur le terrain. pour modifier, pour supprime.</p>
         <button type="button" class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none bg-red-600">Supprime</button>
         <button type="button" class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none bg-amber-300">modifier</button>
 
-            <form class="max-w-sm mx-auto">
+            <form class="flex flex-col gap-4">
 
-                <label for="select_players" class="block mb-2.5 text-sm font-medium text-heading font-bold ... bg-emerald-200">Choose an player</label>
-                 <select id="select_players" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
+                <label for="select_players" class=" font-medium  font-bold  bg-emerald-200">Choose an player</label>
+                 <select id="select_players" class="bg-gray-700 border border-gray-500 text-white p-2 rounded text-sm cursor-pointer">
                     <option selected>Choose a player</option>
-                    <option value="GK">bono</option>
-                        <option value="RB">Hakimi</option>
-                          <option value="LB">Mezraoui</option>
-                           <option value="CB">Ramos</option>
+                    <option value="GK">Courtois</option>
+                        <option value="RB">Alexander-Arnold</option>
+                          <option value="LB">Marc Cucurella</option>
+                           <option value="CB">Rudiger</option>
                                </select>
-                 </select>
-             </form>      
+                             
+                             </form>      
   
-        </div>
-        <!-- Hadi div li jam3a terain m3a dakchi lakher  -->
-        <div class="flex flex-col ... "> 
-              <div class="flex justify-between px-2  items-center  bg-blue-700 h-20 w-300">
+            </aside>
+        
+        <div class="flex flex-col flex-1  "> 
+              <div class="flex justify-between px-2  items-center  bg-blue-700 h-20 w-350">
                   <h2 class="bg-amber-300 font-bold ...">Terrain-4-4-2</h2>
                     <p class="bg-amber-300  font-bold ...">Composition du match</p>
                      </div>
                      <div class="les_elemen">
-                         <div class="elem1"></div>
-                         <div class="elem2"></div>
-                         <div class="elem3">
-                             <p id="def" class="font-bold ...">LB</p>
-                         </div>
-                         <div class="elem4"></div>
-                         <div class="elem5"></div>
-                         <div class="elem6">
-                            <p id="mid" class="font-bold ...">LMF</p>
-                         </div>
-                         <div class="elem7"></div>
-                         <div class="elem8"></div>
-                         <div class="elem9"></div>
-                         <div class="elem10"></div>
-                         <div class="elem11"></div>
-                         <div class="elem12"></div>
-                         <div class="elem13">
-                            
-                         </div>
-                         <div class="elem14"></div>
-                         <div class="elem15">
-                            
-                         </div>
-                         <div class="elem16"></div>
-                         <div class="elem17"></div>
-                         <div class="elem18"></div>
-                         <div class="elem19"></div>
-                         <div class="elem20"></div>
-                         <div class="elem21"></div>
-                         <div class="elem22"></div>
-                         <div class="elem23">
-                             
-                         </div>
-                         <div class="elem24"></div>
-                         <div class="elem25"></div>
-                         <div class="elem26"></div>
-                         <div class="elem27"></div>
-                         <div class="elem28"></div>
-                         <div class="elem29"></div>
-                         <div class="elem30">
-                             
-                         </div>
-                         <div class="elem31"></div>
-                         <div class="elem32">
-                             <p id="cf" class="font-bold ...">CF</p>
-                         </div>
-                         <div class="elem33"></div>
-                         <div class="elem34"></div>
-                         <div class="elem35"></div>
-                         <div class="elem36">
-                            
-                         </div>
-                         <div class="elem37">
-                            <p id="gk" class="font-bold ...">GK</p>
-                         </div>
-                         <div class="elem38">
-                             <p id="def" class="font-bold ...">CB</p>
-                         </div>
-                         <div class="elem39">
-                            <p id="mid" class="font-bold ...">CMF</p>
-                         </div>
-                         <div class="elem40">
-                            
-                         </div>
-                         <div class="elem41">
-                            
-                         </div>
-                         <div class="elem42">
-                            
-                         </div>
-                         <div class="elem43"></div>
-                         <div class="elem44"></div>
-                         <div class="elem45">
-                            
-                         </div>
-                         <div class="elem46"></div>
-                         <div class="elem47"></div>
-                         <div class="elem48"></div>
-                         <div class="elem49">
-                           
-                         </div>
-                         <div class="elem50">
-                            
-                         </div>
-                         <div class="elem51">
-                           
-                         </div>
-                         <div class="elem52"></div>
-                         <div class="elem53">
-                            
-                         </div>
-                         <div class="elem54">
-                             
-                         </div>
-                         <div class="elem55"></div>
-                         <div class="elem56">
-                             
-                         </div>
-                         <div class="elem57">
-                             
-                         </div>
-                         <div class="elem58">
-                             <p id="mid" class="font-bold ...">CMF</p>
-                         </div>
-                         <div class="elem59">
-                          >
-                            
-                         </div>
-                         <div class="elem60">
-                           
-                         </div>
-                         <div class="elem61">
-                             <p id="cf" class="font-bold ...">CF</p>
-                         </div>
-                         <div class="elem62">
-                             <p id="def" class="font-bold ...">CB</p></div>
-                         <div class="elem63">
-                         </div>
-                         <div class="elem64"></div>
-                         <div class="elem65"></div>
-                         <div class="elem66"></div>
-                         <div class="elem67"></div>
-                         <div class="elem68"></div>
-                         <div class="elem69"></div>
-                         <div class="elem70"></div>
-                         <div class="elem71"></div>
-                         <div class="elem72"></div>
-                         <div class="elem73"></div>
-                         <div class="elem74"></div>
-                         <div class="elem75"></div>
-                         <div class="elem76"></div>
-                         <div class="elem77"></div>
-                         <div class="elem78"></div>
-                         <div class="elem79"></div>
-                         <div class="elem80"></div>
-                         <div class="elem81"></div>
-                         <div class="elem82"></div>
-                         <div class="elem83"></div>
-                         <div class="elem84"></div>
-                         <div class="elem85"></div>
-                         <div class="elem86"></div>
-                         <div class="elem87"></div>
-                         <div class="elem88"><p id="def" class="font-bold ...">RB</p></div>
-                         <div class="elem89">
-                            
-                         </div>
-                         <div class="elem90">
-                            <p id="mid" class="font-bold ...">RMF</p></div>
-                         <div class="elem91"></div>
-                         <div class="elem92"></div>
-                         <div class="elem93"></div>
-                         <div class="elem94"></div>
-                         <div class="elem95"></div>
-                         <div class="elem96"></div>
-                         <div class="elem97"></div>
-                         <div class="elem98"></div>
-                         <div class="elem99"></div>
-                         <div class="elem100"></div>
-                         <div class="elem101"></div>
-                         <div class="elem102"></div>
-                         <div class="elem103"></div>
-                         <div class="elem104"></div>
-                         <div class="elem105"></div>
-                         <div class="elem106"></div>
-                         <div class="elem107"></div>
-                         <div class="elem108"></div>
+                                  <div class="elem1"></div>
+          <div class="elem2"></div>
+          <div class="elem3">
+             <div class="cb-card">
+              <div class="cb-num"></div>
+              <span class="cb-pos">CB</span>
+              <span class="cb-name"></span>
+            </div>
+        </div>
+          <div class="elem4"></div>
+          <div class="elem5"></div>
+          <div class="elem6">
+             <div class="cmf-card">
+              <div class="cmf-num"></div>
+              <span class="cmf-pos">LMF</span>
+              <span class="cmf-name"></span>
+            </div></div>
+          <div class="elem7"></div>
+          <div class="elem8"></div>
+          <div class="elem9"></div>
+          <div class="elem10"></div>
+
+          
+          <div class="elem11"></div>
+          <div class="elem12"></div>
+          <div class="elem13"></div>
+          <div class="elem14"></div>
+          <div class="elem15"></div>
+          <div class="elem16"></div>
+          <div class="elem17"></div>
+          <div class="elem18"></div>
+          <div class="elem19"></div>
+          <div class="elem20"></div>
+          <div class="elem21"></div>
+          <div class="elem22"></div>
+
+      
+          <div class="elem23"></div>
+          <div class="elem24"></div>
+          <div class="elem25"></div>
+          <div class="elem26"></div>
+          <div class="elem27"></div>
+          <div class="elem28"></div>
+          <div class="elem29"></div>
+          <div class="elem30"></div>
+          <div class="elem31"></div>
+          <div class="elem32">
+              <div class="cf-card">
+              <div class="cf-num"></div>
+              <span class="cf-pos">CF</span>
+              <span class="cf-name"></span>
+            </div>
+        </div>
+          <div class="elem33"></div>
+
+         
+          <div class="elem37">
+            <div class="gk-card">
+              <div class="gk-num">1</div>
+              <span class="gk-pos">GK</span>
+              <span class="gk-name">Courtois</span>
+            </div>
+          </div>
+          <div class="elem38">
+            <div class="cb-card">
+              <div class="cb-num"></div>
+              <span class="cb-pos">CB</span>
+              <span class="cb-name"></span>
+            </div>
+                </div>
+          <div class="elem40"></div>
+          <div class="elem41"></div>
+          <div class="elem39">
+             <div class="cmf-card">
+              <div class="cmf-num"></div>
+              <span class="cmf-pos">Cmf</span>
+              <span class="cmf-name"></span>
+            </div>
+          </div>
+          
+          <div class="elem42"></div>
+          <div class="elem43"></div>
+          <div class="elem44"></div>
+          <div class="elem45"></div>
+
+   
+          <div class="elem46"></div>
+          <div class="elem47"></div>
+          <div class="elem48"></div>
+          <div class="elem49"></div>
+          <div class="elem50"></div>
+          <div class="elem51"></div>
+          <div class="elem52"></div>
+          <div class="elem53"></div>
+          <div class="elem54"></div>
+          <div class="elem55"></div>
+          <div class="elem56"></div>
+
+     
+          <div class="elem62">
+            <div class="cb-card">
+              <div class="cb-num"></div>
+              <span class="cb-pos">CB</span>
+              <span class="cb-name"></span>
+            </div>
+             </div>
+          <div class="elem57"></div>
+          <div class="elem59"></div>
+          <div class="elem58">
+            <div class="cmf-card">
+              <div class="cmf-num"></div>
+              <span class="cmf-pos">Cmf</span>
+              <span class="cmf-name"></span>
+            </div>
+
+          </div>
+          <div class="elem60"></div>
+          <div class="elem63"></div>
+          <div class="elem64"></div>
+          <div class="elem65"></div>
+          <div class="elem66"></div>
+
+        
+          <div class="elem67"></div>
+          <div class="elem68"></div>
+          <div class="elem69"></div>
+          <div class="elem70"></div>
+          <div class="elem71"></div>
+          <div class="elem72"></div>
+          <div class="elem73"></div>
+          <div class="elem74"></div>
+          <div class="elem61">
+            <div class="cf-card">
+              <div class="cf-num"></div>
+              <span class="cf-pos">CF</span>
+              <span class="cf-name"></span>
+            </div>
+            </div>
+          <div class="elem75"></div>
+          <div class="elem76"></div>
+
+         
+          <div class="elem77"></div>
+          <div class="elem78"></div>
+          <div class="elem79"></div>
+          <div class="elem80"></div>
+          <div class="elem81"></div>
+          <div class="elem82"></div>
+          <div class="elem83"></div>
+          <div class="elem84"></div>
+          <div class="elem85"></div>
+          <div class="elem86"></div>
+          <div class="elem87"></div>
+          <div class="elem89"></div>
+
+         
+          <div class="elem91"></div>
+          <div class="elem92"></div>
+          <div class="elem88">
+            <div class="cb-card">
+              <div class="cb-num"></div>
+              <span class="cb-pos">RB</span>
+              <span class="cb-name"></span>
+            </div>
+          </div>
+          <div class="elem93"></div>
+          <div class="elem90">
+             <div class="cmf-card">
+              <div class="cmf-num"></div>
+              <span class="cmf-pos">RMF</span>
+              <span class="cmf-name"></span>
+            </div>
+            </div>
+          <div class="elem93b"></div>
+           </div>
+                         
                         
                        
 
@@ -236,8 +245,7 @@
                      
                      
 
-
-                     </div>
+                     
         <!-- bg-[url(/files/stad.jpg)] -->
          
          
@@ -249,33 +257,75 @@
     </div>
 </main>
 
-<form class="modal">
+  <div id="modal-overlay" class="modal-overlay">
 
-    <label for="player_fullname"  >Write a full name of your player </label>
-    <input type="text" id="player_fullname" placeholder="EX:Cristiano Ronaldo " > 
-    <label for="select_position" class="block mb-2.5 text-sm font-medium text-heading font-bold ... bg-emerald-200">select player postion</label>
-                 <select id="select_position" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
-                    <option selected>Choose the position</option>
-                    <option value="GK">GK</option>
-                         <option value="CB">CB</option>
-                          <option value="LB">LB</option>
-                           <option value="RB">RB</option>
-                           <option value="RB">LMF</option>
-                           <option value="RB">CMF</option>
-                           <option value="RB">CMF</option>
-                           <option value="RB">RMF</option>
-                           <option value="RB">CF</option>
-                         </select>
-                         <label for="player_number">Choose a number </label>
-                        <input type="text" id="player_number" placeholder="Entre 1 to 99">
-                        <div id="close_box" class="close_box">
-                                
-  
-                                  <!-- The X Close Button -->
-                                  <button class="close-btn" aria-label="Close" onclick="closeBox()">&times;</button>
-                                 </div>
-                                </form>
     
+        <div class="modal">
+
+     
+        <div class="modal__header">
+        <h2 class="modal__title">Ajouter un joueur</h2>
+        <button id="btn-fermer-modal" class="modal__close" aria-label="Fermer">&times;</button>
+      </div>
+
+      
+      <form id="form-joueur" class="modal__form">
+
+        
+        <div class="form-group">
+          <label for="player_fullname">Nom complet du joueur</label>
+          <input
+            type="text"
+            id="player_fullname"
+            placeholder="Ex : Cristiano Ronaldo"
+            required
+          />
+        </div>
+
+        
+        <div class="form-group">
+          <label for="select_position">Poste</label>
+          <select id="select_position" required>
+            <option value="" selected disabled>Choisir un poste</option>
+            <option value="GK">GK — Gardien</option>
+            <option value="LB">LB — Défenseur gauche</option>
+            <option value="CB">CB — Défenseur central 1</option>
+            <option value="CB2">CB — Défenseur central 2</option>
+            <option value="RB">RB — Défenseur droit</option>
+            <option value="LMF">LMF — Milieu gauche</option>
+            <option value="CMF">CMF — Milieu central 1</option>
+            <option value="CMF2">CMF — Milieu central 2</option>
+            <option value="RMF">RMF — Milieu droit</option>
+            <option value="CF">CF — Buteur 1</option>
+            <option value="CF2">CF — Buteur 2</option>
+          </select>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="player_number">Numéro (1 to 99)</label>
+          <input
+            type="number"
+            id="player_number"
+            placeholder="Ex : 10"
+            min="1"
+            max="99"
+            required
+          />
+        </div>
+
+        
+        <div class="modal__actions">
+          <button type="button" id="btn-annuler" class="btn btn--cancel">Annuler</button>
+          <button type="submit" class="btn btn--save">Enregistrer</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
     
     
 </body>
