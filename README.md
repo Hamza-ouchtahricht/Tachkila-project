@@ -47,7 +47,7 @@ L'ensemble du projet a été organisé et suivi selon la méthodologie **Scrum**
 | :--- | :--- |
 | **Structure** | HTML5 Sémantique (`header`, `aside`, `main`, modale) |
 | **Style & Layout** | Tailwind CSS, CSS3 (CSS Grid natif 12×9) |
-| **Logique & Données** | JavaScript (Vanilla JS, DOM, Regex, `localStorage`) |
+| **Logique & Données** | JavaScript ( DOM,  `localStorage`) |
 | **Gestion & Déploiement** | Git, GitHub, Jira (Scrum), Vercel |
 
 ---
