@@ -5,6 +5,9 @@ body{
     height: 100vh;
 }
 
+.elem_non{
+  display:none;
+}
 
 .les_elemen{
     display: grid;
