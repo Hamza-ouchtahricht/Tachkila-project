@@ -12,4 +12,10 @@ btn_annuler.addEventListener("click",() => {
 }
 
 )
+const modal__close = document.querySelector(".modal__close");
+
+modal__close.addEventListener("click", () => {
+    modalOverlay.classList.toggle("active");
+
+});
  

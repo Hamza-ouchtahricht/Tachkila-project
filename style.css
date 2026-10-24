@@ -32,7 +32,7 @@ body{
 .gk-card{
     display: flex;
   flex-direction: column;
-  align-items: center;
+   align-items: center;
   justify-content: center;
   gap: 6px;
   background-color: #f1dd01 ;
@@ -52,11 +52,16 @@ body{
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  background-color: #cf7c09;
  
-  color: #f59e0b;
+  color: #e2e207;
 }
 .gk-pos{
-      color: #f59e0b; opacity: 0.8; 
+      color: white; opacity: 0.8; 
+     border: 1px solid black;
+     border-radius: 20%;
+     background-color: #0f172a;
+      
 }
 
 .cf-card{
@@ -74,7 +79,7 @@ body{
 }
 
 .cf-num{
-    width: 32px;
+  width: 32px;
   height: 32px;
   border-radius: 50%;
   border: 2px solid #cf098a;
@@ -247,10 +252,10 @@ body{
   animation: modal-appear 0.2s ease-out;
 }
 
-@keyframes modal-appear {
+ @keyframes modal-appear {
   from { opacity: 0; transform: scale(0.95); }
   to   { opacity: 1; transform: scale(1);    }
-}
+} 
 
 
 .modal__header {
