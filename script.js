@@ -27,4 +27,19 @@ supprime_player.addEventListener("click", () => {
 
     
 });
+
+const btn_supprime_annuler = document.querySelector(".btn_supprime_annuler");
+btn_supprime_annuler.addEventListener("click" , () => {
+    modal_supprime.classList.toggle("active");   
+});
+
+const modal__supp_close =  document.querySelector(".modal__supp_close");
+
+modal__supp_close.addEventListener("click" , () =>
+{
+    modal_supprime.classList.toggle("active");
+});
+
+
+
  

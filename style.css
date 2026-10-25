@@ -14,8 +14,8 @@ body{
   grid-template-columns: repeat(12, 1fr); 
   grid-template-rows:    repeat(9,  1fr); 
   gap: 6px;
-  height: 600px;
-  background-color: #0f172a;
+  height: 500px;
+  background-color:none;
   padding: 8px;
   border-radius: 12px;
 }
@@ -318,8 +318,23 @@ body{
   border-radius: 4px;
   transition: color 0.15s;
 }
+.modal__supp_close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
 
 .modal__close:hover {
+  color: white;
+}
+
+.modal__supp_close:hover {
   color: white;
 }
 
@@ -376,6 +391,14 @@ body{
   gap: 10px;
   margin-top: 8px;
 }
+.modal_suprimme_actions {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;
+  margin-top: 8px;
+}
+
+
 
 
 .btn--cancel {
@@ -389,7 +412,23 @@ body{
   transition: background-color 0.15s;
 }
 
+.btn_supprime_annuler {
+  background-color: #334155;
+  color: #94a3b8;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
 .btn--cancel:hover {
+  background-color: #475569;
+  color: white;
+}
+
+.btn_supprime_annuler:hover {
   background-color: #475569;
   color: white;
 }
@@ -410,5 +449,11 @@ body{
   background-color: #4338ca;
 }
 
-
-   
+.stad_picture{
+  position: absolute;
+  width: 1000px;
+  height: 500px;
+  z-index: -1;
+  
+}
+  

@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script></script>
+    
     <link rel="stylesheet" href="style.css">
       <script src="script.js"  defer></script>
     <title>Tachkila</title>
 </head>
+
 <body>
+ 
      <header class= "flex justify-between items-center bg-cyan-500  px-4 h-18 ">  <!--flex-wrap anhtajha f responsive-->
       <div class="flex  items-center">
         <img  src="/files/atlaslogo.png" alt="atlaslogo" class="relative  h-20 w-20 px-2 py-1 object-contain">
@@ -51,16 +53,19 @@
                            <option value="CB">Rudiger</option>
                                </select>
                              
-                             </form>      
+                       </form>      
   
             </aside>
-        
-        <div class="flex flex-col flex-1  "> 
+     
+        <div class="flex flex-col flex-1"> 
               <div class="flex justify-between px-2  items-center  bg-blue-700 h-20 w-full">
                   <h2 class="bg-amber-300 font-bold ...">Terrain-4-4-2</h2>
                     <p class="bg-amber-300  font-bold ...">Composition du match</p>
                      </div>
-                     <div class="les_elemen">
+                      
+                     <div class="les_elemen ">
+                       <img src="/files/stad.jpg" alt="stad pictuer" class="stad_picture">
+                      
             <div class="elem_non"></div>
           <div class="elem_non"></div>
           <div class="elem3">
@@ -233,12 +238,13 @@
             
             </div>
           <div class="elem_non"></div>
+      
            </div>
                          
                         
-                       
+                      
 
-                     </div>
+        </div>
 
                      
                      
@@ -332,7 +338,7 @@
      
         <div class="modal__header">
         <h2 class="modal__title">supprime un joueur</h2>
-        <button id="btn-fermer-modal" class="modal__close" aria-label="Fermer le menu"">&times;</button>
+        <button id="btn-fermer-modal" class="modal__supp_close" aria-label="Fermer le menu"">&times;</button>
       </div>
 
       
@@ -382,8 +388,8 @@
         </div>
 
         
-        <div class="modal__actions">
-          <button type="button" id="btn-annuler" class="btn btn--cancel">Annuler</button>
+        <div class="modal_suprimme_actions">
+          <button type="button" id="btn_supprime_annuler" class="btn_supprime_annuler">Annuler</button>
           <button type="submit" class="btn btn--save">Enregistrer</button>
         </div>
 
