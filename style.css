@@ -3,6 +3,9 @@ body{
     background-color: black;
     color: azure;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .elem_non{
@@ -14,7 +17,7 @@ body{
   grid-template-columns: repeat(12, 1fr); 
   grid-template-rows:    repeat(9,  1fr); 
   gap: 6px;
-  height: 500px;
+  height: 400px;
   background-color:none;
   padding: 8px;
   border-radius: 12px;
@@ -27,8 +30,10 @@ body{
 }
 .elem37{
     
-    grid-column: 1/2;
+    grid-column: 1/3;
     grid-row: 4/7;
+    width: 60%;
+    height: 100%;
   
 }
 
@@ -37,13 +42,15 @@ body{
   flex-direction: column;
    align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   background-color: #f1dd01 ;
   border: 2px solid #f59e0b ; 
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
   height: 100%;
+  
+  
 }
 
 .gk-num{
@@ -160,30 +167,60 @@ body{
 
     
 .elem3{
-     grid-column: 3 / 5;   grid-row: 1; 
+     grid-column: 4 / 6;
+      grid-row: 1/3; 
+      width: 70%;
+      height:80% ;
 }
 
 .elem38 { 
-    grid-column: 2 / 4;   grid-row: 4; }   
+    grid-column: 3 / 5; 
+    grid-row: 3/5;
+  width: 70%;
+    height:80% ; }   
 .elem62 {
-     grid-column: 2 / 4;   grid-row: 6; }   
+     grid-column: 3 / 5; 
+      grid-row: 6/8;
+     width: 70%;
+     height:80% ;}   
 .elem88 {
-     grid-column: 3 / 5;   grid-row: 9; }   
+     grid-column: 4/ 6;
+     grid-row: 8/10;
+      width: 70%;
+      height:80% ; }   
 
 .elem6  {
-     grid-column: 7 / 9;   grid-row: 1; }   
+     grid-column: 7 / 9;
+     grid-row: 1/3;
+    width: 70%;
+      height:80% ; }   
 .elem39 {
-     grid-column: 6 / 8;   grid-row: 4; }   
+     grid-column: 6 / 8;
+     grid-row: 3/5;
+    width: 70%;
+      height:80% ; }   
 .elem58 {
-     grid-column: 6 / 8;   grid-row: 6; }   
+     grid-column: 6 / 8;  
+      grid-row: 6/8; 
+    width: 70%;
+      height:80% ;}   
 .elem90 {
-     grid-column: 7 / 9;   grid-row: 9; }   
+     grid-column: 7 / 9;
+     grid-row: 8/10;
+    width: 70%;
+      height:80% ; }   
 
 
 .elem32 {
-     grid-column: 10 / 12; grid-row: 3; }   
+     grid-column: 10 / 12;
+      grid-row: 3/5;
+    width: 70%;
+      height:80% ; }   
 .elem61 {
-     grid-column: 10 / 12; grid-row: 7; }   
+     grid-column: 10 / 12; 
+     grid-row: 6/8; 
+    width: 70%;
+      height:80% ;}   
 
 
 .def{
@@ -240,6 +277,19 @@ body{
 
 
 .modal_supprime {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+   display: none; 
+}
+.modal_modifier {
   position: fixed;
   top: 0;
   left: 0;
@@ -451,8 +501,10 @@ body{
 
 .stad_picture{
   position: absolute;
+  
   width: 1000px;
-  height: 500px;
+  height: 400px;
+  left: 200px;
   z-index: -1;
   
 }
