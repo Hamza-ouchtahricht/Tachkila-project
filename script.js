@@ -25,6 +25,24 @@ const inputNumeroModif = document.querySelector("#numero_modif");
 //bouton dyal confirmation dyal wach bghiti t soprimi wlala 
 
 const btnConfirmerSupprime = document.querySelector("#btn_confirmer_supprime")
+const tousLesModals = [modalAjout, modalSupprime , modalModifier];
+
+button_ajout.addEventListener("click", function(){
+    ouvrirModal(modalAjout);
+})
+ for(let i =0; i<tousLesModals.length; i++){
+    const modal = tousLesModals[i];
+     //clicl 3la lkhalfiya katsd l modal
+    modal.addEventListener("click", function(){
+        fermerModal(modal);
+     })
+
+   
+}
+// les fonction dyal ouvrir w ferme les modals 
+function ouvrirModal(modal) {
+    modal.classList.add("active");
+}
 
 
 
