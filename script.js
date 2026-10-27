@@ -36,6 +36,10 @@ button_ajout.addEventListener("click", function(){
     modal.addEventListener("click", function(){
         fermerModal(modal);
      });
+     //click dakhel l fentre makaytsedch l model
+     modal.children[0].addEventListener("click", function(e) {
+        e.stopPropagation();
+     });
      // hado les bouttons X a annuler
 
      const boutonsFermer = modal.querySelectorAll(".modal__close, .modal__supp_close,.btn--cancel , .btn_supprime");
