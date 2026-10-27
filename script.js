@@ -20,7 +20,8 @@ const coulerus = {
     Mil: "bg-emerald-600",
     ATT: "bg-red-600"
 };
- 
+// regex dyal smiya : ghir horof (3arabiya/latin) w espace mn smya mn 3 l 30
+ const regexNom =  /^[A-Za-zÀ-ÿ\u0600-\u06FF ]{3,30}$/;
  
  // les element html li ghadi nkhdm bihom 
 
