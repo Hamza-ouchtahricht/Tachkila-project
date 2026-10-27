@@ -64,7 +64,17 @@ function fermerModal(modal){
     if (modal === modalModifier) {
         viderErreurs("_modif");
     }
-}
+};
+
+// ila touche Echap kat sed ga3 les modals
+document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") {
+        for (let i = 0; i<tousLesModals.length; i++){
+            fermerModal(tousLesModals[i]);
+        }
+    }
+});
+
 
 
 
