@@ -1,4 +1,3 @@
-
 body{
     background-color: black;
     color: azure;
@@ -13,9 +12,9 @@ body{
 }
 
 .les_elemen{
-   display: grid;
+    display: grid;
   grid-template-columns: repeat(12, 1fr); 
-  grid-template-rows: repeat(9,  1fr); 
+  grid-template-rows:    repeat(9,  1fr); 
   gap: 6px;
   height: 400px;
   background-color:none;
@@ -86,14 +85,13 @@ body{
   cursor: pointer;
   width: 100%;
   height: 100%;
-  
 }
 
 .cf-num{
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 2px solid #cf098a;
+  border: 2px solid #cfc209;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +100,10 @@ body{
   color: #1e1b17;
 }
 .cf-pos{
-      color: #0f0a00; opacity: 0.8; 
+      color: white; opacity: 0.8; 
+     border: 1px solid black;
+     border-radius: 20%;
+     background-color: #0f172a; 
 }
 .cb-card{
     display: flex;
@@ -131,7 +132,7 @@ body{
     
   height: 32px;
   border-radius: 50%;
-  border: 2px solid #cf098a;
+  border: 2px solid #b3ec09;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +141,10 @@ body{
   color: #1e1b17;
 }
 .cb-pos{
-      color: #0f0a00; opacity: 0.8; 
+      color: white; opacity: 0.8; 
+     border: 1px solid black;
+     border-radius: 20%;
+     background-color: #0f172a;
 }
 .cmf-card{
     display: flex;
@@ -161,7 +165,7 @@ body{
     
   height: 32px;
   border-radius: 50%;
-  border: 2px solid #cf098a;
+  border: 2px solid #038ad8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,7 +174,10 @@ body{
   color: #1e1b17;
 }
 .cmf-pos{
-      color: #0f0a00; opacity: 0.8; 
+     color: white; opacity: 0.8; 
+     border: 1px solid black;
+     border-radius: 20%;
+     background-color: #0f172a;
 }
 
 
@@ -321,6 +328,11 @@ body{
   display: flex;
 }
 
+/* ligne qui manquait : sans elle, le modal de modification ne s'affiche pas */
+.modal_modifier.active {
+  display: flex;
+}
+
 .modal {
   background-color: #1e293b; 
   border: 1px solid #334155;
@@ -421,7 +433,7 @@ body{
 }
 
 
-.form-group input
+.form-group input,
 .form-group select {
   background-color: #0f172a;  
   border: 1px solid #334155;
@@ -434,7 +446,7 @@ body{
 }
 
 
-.form-group input:focus
+.form-group input:focus,
 .form-group select:focus {
   border-color: #4f46e5;
 }
@@ -518,4 +530,112 @@ body{
   z-index: -1;
   
 }
-  
+
+
+
+   
+
+/* ----- Tablette : 1024px et moins ----- */
+@media (max-width: 1024px) {
+
+  /* le header peut passer sur plusieurs lignes */
+  header {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  /* boutons des postes plus petits */
+  header nav li {
+    padding: 8px 14px;
+  }
+
+  /* l'aside est un peu plus étroit */
+  aside {
+    width: 10rem;
+  }
+
+  /* le terrain devient relatif pour que l'image reste dedans */
+  .les_elemen {
+    position: relative;
+  }
+
+  /* l'image prend toute la largeur du terrain */
+  .stad_picture {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ----- Mobile : 768px et moins ----- */
+@media (max-width: 768px) {
+
+  /* on autorise le scroll de la page */
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  /* l'aside passe au-dessus du terrain */
+  .conteneur_principal {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* la barre bleue du terrain peut passer sur 2 lignes */
+  main > section:first-child {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  /* le terrain garde une taille minimum et on peut le faire défiler à droite */
+  main {
+    overflow-x: auto;
+  }
+
+  .les_elemen {
+    min-width: 700px;
+    font-size: 12px;
+  }
+}
+
+/* ----- Petit mobile : 480px et moins ----- */
+@media (max-width: 480px) {
+
+  header nav ul {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  header nav li {
+    padding: 6px 10px;
+  }
+
+  /* numéros des joueurs plus petits */
+  .gk-num,
+  .cb-num,
+  .cmf-num,
+  .cf-num {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  /* modals : un peu de marge sur les côtés et moins de padding */
+  .modal,
+  .modal_sup {
+    margin: 0 12px;
+    padding: 16px;
+  }
+}
