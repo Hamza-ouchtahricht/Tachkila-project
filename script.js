@@ -100,6 +100,11 @@ document.addEventListener("keydown", function(e){
     }
 });
 
+//kansjel f tableau f localStorage
+function save(){
+    localStorage.setItem("players", JSON.stringify(players));
+}
+
 
 
 
