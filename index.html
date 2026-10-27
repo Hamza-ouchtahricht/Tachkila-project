@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="style.css">
       <script src="script.js"  defer></script>
-    <title>Tachkila</title>
+    <title>Atlas FC- Tachkila</title>
 </head>
 
 <body>
@@ -19,21 +19,21 @@
         <h1 class="font-bold">Atlas Fc</h1> 
       </div>
 
-        <nav class="Menu_de_sélection_des_postes">
-        <ul class="flex gap-4 text-white  ">
+        <nav aria-label="Menu_de_sélection_des_postes">
+        <ul class="flex gap-4 text-white font-bold  ">
           <li class="bg-amber-400 px-6 py-2.5 rounded-full">• GB</li>
           <li class="bg-indigo-800 px-6 py-2.5 rounded-full">• DEF</li>
           <li class="bg-emerald-600 px-6 py-2.5 rounded-full">• MIL</li>
          <li class="bg-red-600 px-6 py-2.5 rounded-full">• ATT</li>
          </ul>
          </nav>
-        <div class="flex items-center gap-8  ">
+        <div class="flex items-center gap-3  ">
 
         <h2 id="Schema" class="px-3 py-1 font-bold ">Schéma</h2>
         <h2 id="formation_442" class=" bg-black text-amber-300 rounded-full  px-3 py-1 font-bold  ">4-4-2</h2>
     </div>
     </header>
-<main  class="flex justify-between">
+<div  class="flex justify-between">
     <aside class="w-52 m in-h-screen bg-slate-800 flex flex-col gap-3 p-4" >
  
         
@@ -43,229 +43,144 @@
             
             <h2 class="font-bold text-base bg-amber-500 text-white py-1 px-2 rounded-md">Effectif</h2>
             <div class="text-xs font-bold text-amber-300 my-2 px-2">
-              <p>Total joueurs : <span id="count-total">7</span></p>
-              <p>joueurs places :<span id="count-places">1</span>/11</p>
+              <p>Total joueurs : <span id="count-total">0</span></p>
+              <p>joueurs places :<span id="count-places">0</span>/11</p>
             </div>
             <p class="font-bold  text-gray-300 bg-gray-700 p-2  rounded-lg ">Cliquez sur un joueur place pour voir sa case sur le terrain. pour modifier, pour supprime.</p>
-        <button type="button" id="supprime_player" class="text-white px-4 py-2  bg-danger box-border border  active:scale-95 border-transparent  hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm  focus:outline-none  transition duration-150 bg-red-600 hover:bg-red-800 cursor-pointer rounded-lg ">Supprime</button>
-        <button type="button" class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none bg-amber-300 hover:bg-amber-400 transition duration-150 cursor-pointer rounded-lg">modifier</button>
-
-            <form class="flex flex-col gap-4">
-
-                <label for="select_players" class=" font-medium  font-bold  bg-emerald-200">Choose an player</label>
-                 <select id="select_players" class="bg-gray-700 border border-gray-500 text-white p-2 rounded text-sm cursor-pointer">
-                    <option selected>Choose a player</option>
-                    <option value="GK">Courtois</option>
-                        <option value="RB">Alexander-Arnold</option>
-                          <option value="LB">Marc Cucurella</option>
-                           <option value="CB">Rudiger</option>
-                           <option value="CB">Militão</option>
-                           <option value="CMF">Militão</option>
-                           <option value="CMF">Militão</option>
-
-                               </select>
-                             
-                       </form>      
-  
+            <div id="liste_joueurs" class="flex flex-col gap-2"></div>
             </aside>
      
         <main class="flex flex-col flex-1 "> 
               <section class="flex justify-between px-2  items-center  bg-blue-700 h-20 w-full">
-                  <h2 class="bg-amber-300 font-bold ...">Terrain-4-4-2</h2>
-                    <p class="bg-amber-300  font-bold ...">Composition du match</p>
+                  <h2 class="bg-amber-300 font-bold">Terrain-4-4-2</h2>
+                    <p class="bg-amber-300  font-bold">Composition du match</p>
               </section>
                       
                      <section class="les_elemen ">
                        <img src="/files/stad.jpg" alt="stad pictuer" class="stad_picture">
-                      
-            <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem3" data-position="LB">
-             <div class="cb-card">
-              <div class="cb-num"></div>
-              <span class="cb-pos">LB</span>
-              <span class="cb-name"></span>
-            </div>
-        </div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem6" data-position="LMF" >
-             <div class="cmf-card">
-              <div class="cmf-num"></div>
-              <span class="cmf-pos">LMF</span>
-              <span class="cmf-name"></span>
-            </div></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
 
-          
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-
-      
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem32" data-position="CF1">
-              <div class="cf-card">
-              <div class="cf-num"></div>
-              <span class="cf-pos">CF</span>
-              <span class="cf-name"></span>
-            </div>
-        </div>
-          <div class="elem_non"></div>
-
-         
-          <div class="elem37" data-position="GK">
+             <!--GK-->         
+             <div class="elem37" data-position="GK">
             <div class="gk-card">
               <div class="gk-num">1</div>
               <span class="gk-pos">GK</span>
               <span class="gk-name">Courtois</span>
             </div>
           </div>
-          <div class="elem38" data-position="CB">
-            <div class="cb-card">
+          <!-- Defence : LB -->
+
+          <div class="elem3" data-position="LB">
+             <div class="cb-card">
+              <div class="player_number_and_poste">
               <div class="cb-num"></div>
-              <span class="cb-pos">CB</span>
+              <span class="cb-pos">LB</span>
+              </div>
+              <span class="cb-name"></span>
+            </div>
+        </div>
+         <!-- Defence : CB -->
+         <div class="elem38" data-position="CB">
+            <div class="cb-card">
+               <div class="player_number_and_poste">
+              <div class="cb-num"></div>
+              <span class="cb-pos">CB</span></div>
               <span class="cb-name"></span>
             </div>
                 </div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem39" data-position="CMF1">
-             <div class="cmf-card">
-              <div class="cmf-num"></div>
-              <span class="cmf-pos">Cmf</span>
-              <span class="cmf-name"></span>
-            </div>
-          </div>
-          
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-
-   
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-
-     
-          <div class="elem62" data-position="CB2">
+                <div class="elem62" data-position="CB2">
             <div class="cb-card">
+               <div class="player_number_and_poste">
               <div class="cb-num"></div>
-              <span class="cb-pos">CB</span>
-              <span class="cb-name"></span>
+              <span class="cb-pos">CB</span></div>
+              <span class="cb-name">Rudiger</span>
             </div>
              </div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem58">
-            <div class="cmf-card" data-position="CMF2">
+             <!--RB-->
+              <div class="elem88" data-position="RB">
+            <div class="cb-card">
+               <div class="player_number_and_poste">
+              <div class="cb-num"></div>
+              <span class="cb-pos">RB</span></div>
+              <span class="cb-name">Arnold</span>
+            </div>
+          </div>
+
+          <!--CMF-->
+           
+          <div class="elem39" data-position="CMF1">
+             <div class="cmf-card">
+               <div class="player_number_and_poste">
               <div class="cmf-num"></div>
-              <span class="cmf-pos">Cmf</span>
+              <span class="cmf-pos">Cmf</span></div>
+              <span class="cmf-name"></span>
+            </div>
+          </div>
+            <div class="elem58">
+            <div class="cmf-card" data-position="CMF2">
+               <div class="player_number_and_poste">
+              <div class="cmf-num"></div>
+              <span class="cmf-pos">Cmf</span></div>
               <span class="cmf-name"></span>
             </div>
 
           </div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-
-        
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem61" data-position="CF2">
-            <div class="cf-card">
-              <div class="cf-num"></div>
-              <span class="cf-pos">CF</span>
-              <span class="cf-name"></span>
-            </div>
-            </div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-
-         
-          <div class="elem_non"></div>
-          <div class="elem_non"></div>
-          <div class="elem88" data-position="RB">
-            <div class="cb-card">
-              <div class="cb-num"></div>
-              <span class="cb-pos">RB</span>
-              <span class="cb-name"></span>
-            </div>
-          </div>
-          <div class="elem_non"></div>
-          <div class="elem90" data-position="RMF">
+             <!--LMF-->
+          
+          <div class="elem6" data-position="LMF" >
              <div class="cmf-card">
+              <div class="player_number_and_poste">
+              <div class="cmf-num"></div>
+              <span class="cmf-pos">LMF</span>
+              </div>
+              <span class="cmf-name"></span>
+            </div>
+          </div>   
+
+          <!--RMF-->
+           <div class="elem90" data-position="RMF">
+             <div class="cmf-card">
+              <div class="player_number_and_poste">
               <div class="cmf-num"></div>
               <span class="cmf-pos">RMF</span>
+              </div>
               <span class="cmf-name"></span>
             
             </div>
-          <div class="elem_non"></div>
-      
-           </div>
+          </div>
+         
+      <!--CF-->
+          <div class="elem32" data-position="CF1">
+              <div class="cf-card">
+              <div class="player_number_and_poste">
+              <div class="cf-num"></div>
+              <span class="cf-pos">CF</span>
+              </div>
+              <span class="cf-name"></span>
+            </div>
+        </div>
+          
+          <div class="elem61" data-position="CF2">
+            <div class="cf-card">
+               <div class="player_number_and_poste">
+              <div class="cf-num"></div>
+              <span class="cf-pos">CF</span></div>
+              <span class="cf-name"></span>
+            </div>
+            </div>
+          </section>
                          
                         
                       
 
-        </div>
+        </main>
         
          
-   </section>
+      </div>
     
         
     
     
-    </div>
-</main>
+ <!--MOdal: ajouter -->
 
   <div id="modal-overlay" class="modal-overlay">
 
@@ -275,11 +190,11 @@
      
         <div class="modal__header">
         <h2 class="modal__title">Ajouter un joueur</h2>
-        <button id="btn-fermer-modal" class="modal__close" aria-label="Fermer le menu"">&times;</button>
+        <button type="button" class="modal__close" aria-label="Fermer le menu">&times;</button>
       </div>
 
       
-      <form id="form-joueur" class="modal__form">
+      <form id="form-joueur" class="modal__form" novalidate>
 
         
         <div class="form-group">
@@ -287,28 +202,25 @@
           <input
             type="text"
             id="player_fullname"
-            placeholder="Ex : Cristiano Ronaldo"
-            required
-          />
+            placeholder="Ex : Cristiano Ronaldo">
+            <span id="erreur_nom" class="text-red-400 text-xs"></span>
+
         </div>
 
         
         <div class="form-group">
           <label for="select_position">Poste</label>
-          <select id="select_position" required>
+          <select id="select_position">
             <option value="" selected disabled>Choisir un poste</option>
-            <option value="GK">GK — Gardien</option>
-            <option value="LB">LB — Défenseur gauche</option>
-            <option value="CB">CB — Défenseur central 1</option>
-            <option value="CB2">CB — Défenseur central 2</option>
-            <option value="RB">RB — Défenseur droit</option>
-            <option value="LMF">LMF — Milieu gauche</option>
-            <option value="CMF">CMF — Milieu central 1</option>
-            <option value="CMF2">CMF — Milieu central 2</option>
-            <option value="RMF">RMF — Milieu droit</option>
-            <option value="CF">CF — Buteur 1</option>
-            <option value="CF2">CF — Buteur 2</option>
+            <option value="GB">GB — Gardien</option>
+            
+            <option value="DEF">DEF — Défenseur</option>
+           
+            <option value="MIL">MIL — Milieu</option>
+        
+            <option value="ATT">ATT  — Attaquant</option>
           </select>
+          <span id="erreur_poste" class="text-red-400 text-xs"></span>
         </div>
 
         
@@ -316,17 +228,16 @@
           <label for="player_number">Numéro (1 to 99)</label>
           <input
             type="number"
-            id="player_number"
+            id="numero_modif"
             placeholder="Ex : 10"
             min="1"
-            max="99"
-            required
-          />
+            max="99">
+        <span id="erreur_numero" class="text-red-400 text-xs"></span>
         </div>
 
         
         <div class="modal__actions">
-          <button type="button" id="btn-annuler" class="btn btn--cancel">Annuler</button>
+          <button type="button" class="btn btn--cancel" >Annuler</button>
           <button type="submit" class="btn btn--save">Enregistrer</button>
         </div>
 
@@ -335,6 +246,7 @@
     </div>
 
   </div>
+  <!-- modal supprimer-->
 
     <div id="modal_supprime" class="modal_supprime">
 
@@ -344,121 +256,63 @@
      
         <div class="modal__header">
         <h2 class="modal__title">supprime un joueur</h2>
-        <button id="btn-fermer-modal" class="modal__supp_close" aria-label="Fermer le menu"">&times;</button>
+        <button type="button" class="modal__supp_close" aria-label="Fermer le menu">&times;</button>
       </div>
-
+     
       
-      <form id="form-joueur" class="modal__form">
-
-        
-        <div class="form-group">
-          <label for="player_fullname">Nom complet du joueur</label>
-          <input
-            type="text"
-            id="player_fullname"
-            placeholder="Ex : Cristiano Ronaldo"
-            required
-          />
-        </div>
-
-        
-        <div class="form-group">
-          <label for="select_position">Poste</label>
-          <select id="select_position" required>
-            <option value="" selected disabled>Choisir un poste</option>
-            <option value="GK">GK — Gardien</option>
-            <option value="LB">LB — Défenseur gauche</option>
-            <option value="CB">CB — Défenseur central 1</option>
-            <option value="CB2">CB — Défenseur central 2</option>
-            <option value="RB">RB — Défenseur droit</option>
-            <option value="LMF">LMF — Milieu gauche</option>
-            <option value="CMF">CMF — Milieu central 1</option>
-            <option value="CMF2">CMF — Milieu central 2</option>
-            <option value="RMF">RMF — Milieu droit</option>
-            <option value="CF">CF — Buteur 1</option>
-            <option value="CF2">CF — Buteur 2</option>
-          </select>
-        </div>
-
-        
-        <div class="form-group">
-          <label for="player_number">Numéro (1 to 99)</label>
-          <input
-            type="number"
-            id="player_number"
-            placeholder="Ex : 10"
-            min="1"
-            max="99"
-            required
-          />
-        </div>
-
-        
-        <div class="modal_suprimme_actions">
-          <button type="button" id="btn_supprime_annuler" class="btn_supprime_annuler">Annuler</button>
-          <button type="submit" class="btn btn--save">Enregistrer</button>
-        </div>
-
-      </form>
-
+      <p id="texte_supprime" class="text-white mb-4"></p>
+      <div class="modal_supprime_actions">
+        <button type="button" class="btn_supprime_annuler">Annuler</button>
+        <button type="button" id="btn_confirmer_supprime" class="btn btn--save">Supprime</button>
+      </div>
     </div>
-
-  </div>
-  <div id="modal_modifier" class="modal_modifier">
-
+    </div>
+        <!--modif-->
     
-        <div class="modal_sup">
+  <div id="modal_modifier" class="modal_modifier">
+  <div class="modal_sup">
 
      
         <div class="modal__header">
-        <h2 class="modal__title">supprime un joueur</h2>
-        <button id="btn-fermer-modal" class="modal__supp_close" aria-label="Fermer le menu"">&times;</button>
+        <h2 class="modal__title">Modifier un joueur</h2>
+        <button type="button" class="modal__supp_close" aria-label="Fermer le menu"">&times;</button>
       </div>
 
       
-      <form id="form-joueur" class="modal__form">
+      <form id="form_modifier" class="modal__form" novalidate>
 
         
         <div class="form-group">
-          <label for="player_fullname">Nom complet du joueur</label>
+          <label for="numero_modif">Nom complet du joueur</label>
           <input
             type="text"
-            id="player_fullname"
-            placeholder="Ex : Cristiano Ronaldo"
-            required
-          />
+            id="nom_modif"
+            placeholder="Ex : Cristiano Ronaldo">
+            <span id="erreur_nom_modif" class="text-red-400 text-xs"></span>
         </div>
 
         
         <div class="form-group">
-          <label for="select_position">Poste</label>
-          <select id="select_position" required>
+          <label for="poste_modif">Poste</label>
+          <select id="poste_modif">
             <option value="" selected disabled>Choisir un poste</option>
-            <option value="GK">GK — Gardien</option>
-            <option value="LB">LB — Défenseur gauche</option>
-            <option value="CB">CB — Défenseur central 1</option>
-            <option value="CB2">CB — Défenseur central 2</option>
-            <option value="RB">RB — Défenseur droit</option>
-            <option value="LMF">LMF — Milieu gauche</option>
-            <option value="CMF">CMF — Milieu central 1</option>
-            <option value="CMF2">CMF — Milieu central 2</option>
-            <option value="RMF">RMF — Milieu droit</option>
-            <option value="CF">CF — Buteur 1</option>
-            <option value="CF2">CF — Buteur 2</option>
+            <option value="GB">GB — Gardien</option>
+            <option value="DEF">DEF — Défenseur</option>>
+            <option value="MIL">MIL — Milieu </option>
+            <option value="ATT">ATT — Attaquant</option>
           </select>
+          <span id="erreur_poste_modif" class="text-red-400 text-xs"></span>
         </div>
 
         
         <div class="form-group">
-          <label for="player_number">Numéro (1 to 99)</label>
+          <label for="numero_modif">Numéro (1 to 99)</label>
           <input
             type="number"
-            id="player_number"
+            id="numero_modif"
             placeholder="Ex : 10"
             min="1"
-            max="99"
-            required
-          />
+            max="99" />
         </div>
 
         
