@@ -26,7 +26,7 @@ const inputNumeroModif = document.querySelector("#numero_modif");
 
 const btnConfirmerSupprime = document.querySelector("#btn_confirmer_supprime")
 const tousLesModals = [modalAjout, modalSupprime , modalModifier];
-
+// bouton "+ajoute un joueur"
 button_ajout.addEventListener("click", function(){
     ouvrirModal(modalAjout);
 })
@@ -35,14 +35,33 @@ button_ajout.addEventListener("click", function(){
      //clicl 3la lkhalfiya katsd l modal
     modal.addEventListener("click", function(){
         fermerModal(modal);
-     })
+     });
+     // hado les bouttons X a annuler
 
-   
+     const boutonsFermer = modal.querySelectorAll(".modal__close, .modal__supp_close,.btn--cancel , .btn_supprime");
+     for(let j=0 ; j<boutonsFermer.length;j++){
+        boutonsFermer[j].addEventListener("click", function(){
+            fermerModal(modal);
+        });
+     }
 }
+
 // les fonction dyal ouvrir w ferme les modals 
 function ouvrirModal(modal) {
     modal.classList.add("active");
 }
+function fermerModal(modal){
+    modal.classList.remove("active");
+    //ila sdina l modal khas tb9a khawya 
+    if (modal === modalAjout){
+        formAjout.reset();
+        viderErreurs("");   
+    }
+    if (modal === modalModifier) {
+        viderErreurs("_modif");
+    }
+}
+
 
 
 
