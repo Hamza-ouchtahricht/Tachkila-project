@@ -104,6 +104,26 @@ document.addEventListener("keydown", function(e){
 function save(){
     localStorage.setItem("players", JSON.stringify(players));
 }
+//message li kayban 3 tawani(akhdar = succes, lhmer= erreur) 
+let timerToast;
+function showToast(message, type){
+    const toast = document.querySelector("#toast");
+    toast.textContent = message;
+    toast.classList.remove("hidden", "bg-emerald-600", "bg-red-600");
+    if(type === "error") {
+        toast.classList.add("bg-red-600");
+
+    }
+    else{
+        toast.classList.add("bg-emrald- 600");
+    }
+    // ila kan toast 9bl lanw9fo timer dyalo 
+    clearTimeout(timerToast);
+    timerToast = setTimeout(function() {
+        toast.classList.add("hidden");
+    }, 3000);
+
+}
 
 
 
