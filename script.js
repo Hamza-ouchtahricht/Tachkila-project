@@ -1,4 +1,11 @@
-// les element html li ghadi nkhdm bihom 
+ //tableau fih ga3 les joueurs , kan jibouh mn localStorage sinon ila kan khawi 
+ 
+ let players = JSON.parse(localStorage.getItem("players"))|| [];
+
+ 
+ 
+ 
+ // les element html li ghadi nkhdm bihom 
 
 const button_ajout = document.querySelector("#button_ajout");
 
