@@ -2,7 +2,24 @@
  
  let players = JSON.parse(localStorage.getItem("players"))|| [];
 
- 
+ //kankhbi hna l id dyal la3ib lghadi nmodifih wla nsuprimih
+ let idAModifier = null;
+ let idASupprimer = null;
+
+ //kol poste (GB,DEF ....) mchi 3la chno mn position f terrain
+const positionParPoster = {
+    GB: ["GK"],
+    DEF: ["LB", "CB1", "CB2","RB"],
+    MIL: ["LMF" ,"CMF1" , "CMF2", "RMF"],
+    ATT: ["CF1", "CF2"]
+};
+
+const coulerus = {
+    GB: "bg-amber-400",
+    DEF: "bg-indigo-800",
+    Mil: "bg-emerald-600",
+    ATT: "bg-red-600"
+};
  
  
  // les element html li ghadi nkhdm bihom 
