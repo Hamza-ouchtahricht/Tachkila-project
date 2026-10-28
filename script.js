@@ -1,15 +1,15 @@
-// ============================================
-// 1. LES DONNEES (data dyal lprojet)
-// ============================================
 
-// tableau fih ga3 les joueurs, kan jibouh men localStorage ila kan, sinon tableau khawi
+// 1. LES DONNEES (données du projet)
+
+
+// tableau qui contient tous les joueurs, récupéré depuis le localStorage s'il existe, sinon tableau vide
 let players = JSON.parse(localStorage.getItem("players")) || [];
 
-// kankhabbi hna id dyal l3ib li ghadi nmodifiw wla nsuprimiw
+// on garde ici l'id du joueur qu'on va modifier ou supprimer
 let idAModifier = null;
 let idASupprimer = null;
 
-// kol poste (GB, DEF...) mchi 3la chno mn position f terrain
+// pour chaque poste (GB, DEF...), les positions possibles sur le terrain
 const positionsParPoste = {
     GB: ["GK"],
     DEF: ["LB", "CB1", "CB2", "RB"],
@@ -17,7 +17,7 @@ const positionsParPoste = {
     ATT: ["CF1", "CF2"]
 };
 
-// couleur dyal kol poste (classes dyal tailwind)
+// couleur de chaque poste (classes Tailwind)
 const couleurs = {
     GB: "bg-amber-400",
     DEF: "bg-indigo-800",
@@ -25,13 +25,12 @@ const couleurs = {
     ATT: "bg-red-600"
 };
 
-// regex dyal smiya : ghir horof (3arbiya / latin) w espace, men 3 l 30
+// regex du nom : seulement des lettres (arabes / latines) et des espaces, de 3 à 30 caractères
 const regexNom = /^[A-Za-zÀ-ÿ\u0600-\u06FF ]{3,30}$/;
 
 
-// ============================================
-// 2. LES ELEMENTS DYAL HTML
-// ============================================
+
+// 2. LES ELEMENTS HTML
 
 const button_ajout = document.querySelector("#button_ajout");
 const listeJoueurs = document.querySelector("#liste_joueurs");
@@ -41,32 +40,32 @@ const modalAjout = document.querySelector(".modal-overlay");
 const modalSupprime = document.querySelector(".modal_supprime");
 const modalModifier = document.querySelector(".modal_modifier");
 
-// formulaire dyal ajout
+// formulaire d'ajout
 const formAjout = document.querySelector("#form-joueur");
 const inputNom = document.querySelector("#player_fullname");
 const selectPoste = document.querySelector("#select_position");
 const inputNumero = document.querySelector("#player_number");
 
-// formulaire dyal modification
+// formulaire de modification
 const formModifier = document.querySelector("#form_modifier");
 const inputNomModif = document.querySelector("#nom_modif");
 const selectPosteModif = document.querySelector("#poste_modif");
 const inputNumeroModif = document.querySelector("#numero_modif");
 
-// bouton dyal confirmation suppression
+// bouton de confirmation de suppression
 const btnConfirmerSupprime = document.querySelector("#btn_confirmer_supprime");
 
 
-// ============================================
-// 3. FONCTIONS SIMPLES (save, toast...)
-// ============================================
 
-// kansejlo tableau f localStorage
+// 3. FONCTIONS SIMPLES (save, toast...)
+
+
+// on enregistre le tableau dans le localStorage
 function save() {
     localStorage.setItem("players", JSON.stringify(players));
 }
 
-// message li kayban 3 tawani (akhdar = succes, ahmar = erreur)
+// message affiché pendant 3 secondes (vert = succès, rouge = erreur)
 let timerToast;
 function showToast(message, type) {
     const toast = document.querySelector("#toast");
@@ -77,14 +76,14 @@ function showToast(message, type) {
     } else {
         toast.classList.add("bg-emerald-600");
     }
-    // ila kan toast 9bel, kanw9fo timer dyalo
+    // s'il y avait déjà un toast, on arrête son timer
     clearTimeout(timerToast);
     timerToast = setTimeout(function () {
         toast.classList.add("hidden");
     }, 3000);
 }
 
-// kanlqaw l3ib b id dyalo
+// on trouve le joueur grâce à son id
 function trouverJoueur(id) {
     for (let i = 0; i < players.length; i++) {
         if (players[i].id === id) {
@@ -94,7 +93,7 @@ function trouverJoueur(id) {
     return null;
 }
 
-// kanchoufo wach chi 3ib kayn f had position
+// on vérifie s'il y a un joueur à cette position
 function joueurALaPosition(position) {
     for (let i = 0; i < players.length; i++) {
         if (players[i].position === position) {
@@ -105,9 +104,9 @@ function joueurALaPosition(position) {
 }
 
 
-// ============================================
+
 // 4. OUVRIR / FERMER LES MODALS
-// ============================================
+
 
 function ouvrirModal(modal) {
     modal.classList.add("active");
@@ -115,7 +114,7 @@ function ouvrirModal(modal) {
 
 function fermerModal(modal) {
     modal.classList.remove("active");
-    // ila sdina modal dyal ajout kanfragho formulaire w les erreurs
+    // si on ferme le modal d'ajout, on vide le formulaire et les erreurs
     if (modal === modalAjout) {
         formAjout.reset();
         viderErreurs("");
@@ -130,17 +129,17 @@ const tousLesModals = [modalAjout, modalSupprime, modalModifier];
 for (let i = 0; i < tousLesModals.length; i++) {
     const modal = tousLesModals[i];
 
-    // click 3la lkhalfiya (barra dyal fenetre) kay sed
+    // un clic sur le fond (en dehors de la fenêtre) ferme le modal
     modal.addEventListener("click", function () {
         fermerModal(modal);
     });
 
-    // click dakhel lfenetre makaysedch (stopPropagation)
+    // un clic dans la fenêtre ne ferme pas le modal (stopPropagation)
     modal.children[0].addEventListener("click", function (e) {
         e.stopPropagation();
     });
 
-    // les boutons dyal fermeture : X w Annuler
+    // les boutons de fermeture : X et Annuler
     const boutonsFermer = modal.querySelectorAll(".modal__close, .modal__supp_close, .btn--cancel, .btn_supprime_annuler");
     for (let j = 0; j < boutonsFermer.length; j++) {
         boutonsFermer[j].addEventListener("click", function () {
@@ -149,7 +148,7 @@ for (let i = 0; i < tousLesModals.length; i++) {
     }
 }
 
-// touche Echap kat sed ga3 les modals
+// la touche Echap ferme tous les modals
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
         for (let i = 0; i < tousLesModals.length; i++) {
@@ -164,10 +163,9 @@ button_ajout.addEventListener("click", function () {
 });
 
 
-// ============================================
 // 5. VALIDATION (regex)
-// ============================================
-// kol fonction katrje3 message d'erreur, wla "" ila kolchi mzyan
+
+// chaque fonction retourne un message d'erreur, ou "" si tout est bon
 
 function verifierNom(nom) {
     if (regexNom.test(nom.trim())) {
@@ -183,7 +181,7 @@ function verifierPoste(poste) {
     return "";
 }
 
-// idIgnore = id dyal l3ib li kanmodifiw (bach maydirch erreur m3a numero dyalo howa)
+// idIgnore = id du joueur qu'on modifie (pour ne pas avoir d'erreur avec son propre numéro)
 function verifierNumero(numero, idIgnore) {
     const n = Number(numero);
     if (numero === "" || !Number.isInteger(n) || n < 1 || n > 99) {
@@ -197,19 +195,19 @@ function verifierNumero(numero, idIgnore) {
     return "";
 }
 
-// kan7to message f span li ta7t input
+// on met le message dans le span sous l'input
 function afficherErreur(idSpan, message) {
     document.querySelector("#" + idSpan).textContent = message;
 }
 
-// suffixe = "" (ajout) wla "_modif" (modification)
+// suffixe = "" (ajout) ou "_modif" (modification)
 function viderErreurs(suffixe) {
     afficherErreur("erreur_nom" + suffixe, "");
     afficherErreur("erreur_poste" + suffixe, "");
     afficherErreur("erreur_numero" + suffixe, "");
 }
 
-// validation real-time f formulaire dyal ajout (m3a kol 7arf)
+// validation en temps réel dans le formulaire d'ajout (à chaque lettre)
 inputNom.addEventListener("input", function () {
     afficherErreur("erreur_nom", verifierNom(inputNom.value));
 });
@@ -220,7 +218,7 @@ inputNumero.addEventListener("input", function () {
     afficherErreur("erreur_numero", verifierNumero(inputNumero.value, null));
 });
 
-// validation real-time f formulaire dyal modification
+// validation en temps réel dans le formulaire de modification
 inputNomModif.addEventListener("input", function () {
     afficherErreur("erreur_nom_modif", verifierNom(inputNomModif.value));
 });
@@ -232,12 +230,11 @@ inputNumeroModif.addEventListener("input", function () {
 });
 
 
-// ============================================
+
 // 6. AJOUTER UN JOUEUR
-// ============================================
 
 formAjout.addEventListener("submit", function (e) {
-    e.preventDefault(); // bach la page matrefreshich
+    e.preventDefault(); // pour que la page ne se recharge pas
 
     const erreurNom = verifierNom(inputNom.value);
     const erreurPoste = verifierPoste(selectPoste.value);
@@ -247,13 +244,13 @@ formAjout.addEventListener("submit", function (e) {
     afficherErreur("erreur_poste", erreurPoste);
     afficherErreur("erreur_numero", erreurNumero);
 
-    // ila kayn chi erreur nw9fo
+    // s'il y a une erreur, on s'arrête
     if (erreurNom !== "" || erreurPoste !== "" || erreurNumero !== "") {
         showToast("Corrige les erreurs du formulaire", "error");
         return;
     }
 
-    // position = null ya3ni l3ib f banc (mazal mamchi f terrain)
+    // position = null veut dire que le joueur est sur le banc (pas encore sur le terrain)
     const nouveauJoueur = {
         id: Date.now(),
         name: inputNom.value.trim(),
@@ -270,18 +267,18 @@ formAjout.addEventListener("submit", function (e) {
 });
 
 
-// ============================================
-// 7. AFFICHAGE (aside + terrain + compteurs)
-// ============================================
 
-// kanrsmo les cartes dyal les joueurs f aside
+// 7. AFFICHAGE (aside + terrain + compteurs)
+
+
+// on dessine les cartes des joueurs dans l'aside
 function afficherJoueurs() {
     listeJoueurs.innerHTML = "";
 
     for (let i = 0; i < players.length; i++) {
         const p = players[i];
 
-        // options dyal select : "Sur le banc" + les positions dyal poste dyalo
+        // options du select : "Sur le banc" + les positions de son poste
         let options = '<option value="">Sur le banc</option>';
         const positions = positionsParPoste[p.role];
         for (let j = 0; j < positions.length; j++) {
@@ -292,7 +289,7 @@ function afficherJoueurs() {
             options += '<option value="' + positions[j] + '" ' + selected + ">" + positions[j] + "</option>";
         }
 
-        // ila l3ib f terrain, la carte katwli bahta (opacity)
+        // si le joueur est sur le terrain, la carte devient pâle (opacity)
         let opacite = "";
         if (p.position !== null) {
             opacite = "opacity-50";
@@ -316,11 +313,11 @@ function afficherJoueurs() {
     }
 }
 
-// kanrsmo terrain : kan7iydo ga3 les noms w numeros, men b3d kan3emro li kaynin
+// on dessine le terrain : on efface tous les noms et numéros, puis on remplit ceux qui existent
 function afficherTerrain() {
     const cases = document.querySelectorAll("[data-position]");
 
-    // 1) nvidiw terrain
+    // 1) on vide le terrain
     for (let i = 0; i < cases.length; i++) {
         const num = cases[i].querySelector('[class$="-num"]');
         const nom = cases[i].querySelector('[class$="-name"]');
@@ -328,7 +325,7 @@ function afficherTerrain() {
         if (nom) nom.textContent = "";
     }
 
-    // 2) n7to les joueurs li 3ndhom position
+    // 2) on place les joueurs qui ont une position
     for (let i = 0; i < players.length; i++) {
         const p = players[i];
         if (p.position !== null) {
@@ -355,7 +352,7 @@ function afficherCompteurs() {
     document.querySelector("#count-places").textContent = places;
 }
 
-// fonction li katjm3 koulchi (kan3ayto 3liha mnin kaybdel chi haja)
+// fonction qui regroupe tout (on l'appelle quand quelque chose change)
 function afficherTout() {
     afficherJoueurs();
     afficherTerrain();
@@ -363,10 +360,10 @@ function afficherTout() {
 }
 
 
-// ============================================
+
 // 8. PLACER UN JOUEUR / RETOUR AU BANC
-// ============================================
-// kanst3mlo "event delegation" : event wa7d 3la la liste kamla
+
+// on utilise la "délégation d'événements" : un seul événement sur toute la liste
 
 listeJoueurs.addEventListener("change", function (e) {
     if (!e.target.classList.contains("select_terrain")) {
@@ -377,7 +374,7 @@ listeJoueurs.addEventListener("change", function (e) {
     const joueur = trouverJoueur(id);
     const nouvellePosition = e.target.value;
 
-    // "Sur le banc" => la position kat3awd khawya
+    // "Sur le banc" => la position redevient vide
     if (nouvellePosition === "") {
         joueur.position = null;
         save();
@@ -386,14 +383,14 @@ listeJoueurs.addEventListener("change", function (e) {
         return;
     }
 
-    // verification 1 : position mnasba l poste dyal l3ib
+    // vérification 1 : la position correspond au poste du joueur
     if (!positionsParPoste[joueur.role].includes(nouvellePosition)) {
         showToast("Cette position ne convient pas a ce joueur", "error");
         afficherTout();
         return;
     }
 
-    // verification 2 : position khawya (mchi mchghoula b chi 3ib akhor)
+    // vérification 2 : la position est libre (pas occupée par un autre joueur)
     const occupant = joueurALaPosition(nouvellePosition);
     if (occupant !== null && occupant.id !== id) {
         showToast("Position deja occupee par " + occupant.name, "error");
@@ -408,9 +405,9 @@ listeJoueurs.addEventListener("change", function (e) {
 });
 
 
-// ============================================
-// 9. MODIFIER / SUPPRIMER (boutons dyal kol carte)
-// ============================================
+
+// 9. MODIFIER / SUPPRIMER (boutons de chaque carte)
+
 
 listeJoueurs.addEventListener("click", function (e) {
     const action = e.target.dataset.action;
@@ -422,7 +419,7 @@ listeJoueurs.addEventListener("click", function (e) {
 
     if (action === "modifier") {
         idAModifier = id;
-        // kan3emro formulaire b ma3lomat l9dima
+        // on remplit le formulaire avec les anciennes informations
         inputNomModif.value = joueur.name;
         selectPosteModif.value = joueur.role;
         inputNumeroModif.value = joueur.number;
@@ -437,7 +434,7 @@ listeJoueurs.addEventListener("click", function (e) {
     }
 });
 
-// submit dyal modification
+// envoi du formulaire de modification
 formModifier.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -456,7 +453,7 @@ formModifier.addEventListener("submit", function (e) {
 
     const joueur = trouverJoueur(idAModifier);
 
-    // ila l3ib bdl poste w howa f terrain, kayrj3 l banc
+    // si le joueur change de poste alors qu'il est sur le terrain, il retourne sur le banc
     if (joueur.role !== selectPosteModif.value && joueur.position !== null) {
         joueur.position = null;
         showToast("Poste change : le joueur retourne sur le banc", "success");
@@ -473,9 +470,9 @@ formModifier.addEventListener("submit", function (e) {
     fermerModal(modalModifier);
 });
 
-// confirmation dyal suppression
+// confirmation de la suppression
 btnConfirmerSupprime.addEventListener("click", function () {
-    // kan7iydo l3ib mn tableau (position dyalo katwli khawya automatiquement)
+    // on retire le joueur du tableau (sa position devient libre automatiquement)
     players = players.filter(function (p) {
         return p.id !== idASupprimer;
     });
@@ -486,7 +483,7 @@ btnConfirmerSupprime.addEventListener("click", function () {
 });
 
 
-// ============================================
+// 
 // 10. AU CHARGEMENT DE LA PAGE
-// ============================================
+// 
 afficherTout();
